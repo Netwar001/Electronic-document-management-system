@@ -1,0 +1,36 @@
+﻿<Window x:Class="Electronic_document_management_system.ElectronicCaseCard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Electronic_document_management_system"
+        mc:Ignorable="d"
+        Title="Карточка дела" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top">
+            <TabItem Header="Основная информация">
+                <Grid Background="#FFE5E5E5">
+                    <StackPanel>
+                        <ScrollViewer Margin="5,5,5,5" MaxHeight="700" >
+                            <StackPanel x:Name="mainStackPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,10,10"/>
+                        </ScrollViewer>
+                        <Button x:Name="SaveButton" Content="Сохранить" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Bottom" Click="SaveButton_Click"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Документы в деле">
+                <Grid Background="#FFE5E5E5">
+                    <StackPanel>
+                        <WrapPanel>
+                            <Button x:Name="AddDocBtn" HorizontalAlignment="Left" Content="Добавить документ" Click="AddDocBtn_Click" Margin="10,10,10,10" Width="170" />
+                            <Button x:Name="MoveDocBtn" HorizontalAlignment="Left" Content="Переместить документ" Click="MoveDocBtn_Click" Margin="10,10,10,10" Width="190" />
+                            <Button x:Name="OpenInfoAboutDocBtn" HorizontalAlignment="Left" Content="Информация о документе" Click="OpenInfoAboutDocBtn_Click" Margin="10,10,10,10" Width="220" />
+                        </WrapPanel>
+                        <DataGrid x:Name="documentsDataGrid" HorizontalAlignment="Left" Margin="10,0,0,10" MaxHeight="600" MaxWidth="700" IsReadOnly="True" SelectionChanged="documentsDataGrid_SelectionChanged" AutoGeneratingColumn="documentsDataGrid_AutoGeneratingColumn"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

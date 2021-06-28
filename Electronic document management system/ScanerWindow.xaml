@@ -1,0 +1,21 @@
+﻿<Window x:Class="Electronic_document_management_system.ScanerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Electronic_document_management_system"
+        mc:Ignorable="d"
+        Title="Сканер" Height="700" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Width="200" Margin="10,10,10,10">
+            <Label HorizontalAlignment="Stretch" Content="Свойства:" VerticalAlignment="Top" Margin="10"/>
+            <ComboBox x:Name="SelectScanerComboBox" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10" materialDesign:HintAssist.Hint="Выбор сканера"/>
+            <TextBox x:Name="FileNameTextBox" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10" materialDesign:HintAssist.Hint="Название файла"/>
+            <TextBox x:Name="FolderTextBox" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10" IsReadOnly="True"/>
+            <Button x:Name="ChangeFolder" Content="Выбрать папку" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10" Click="ChangeFolder_Click"/>
+        </StackPanel>
+        <Button x:Name="ScanBtn" Content="Сканировать" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Bottom" Click="ScanBtn_Click"/>
+        <Image x:Name="ImageBox" HorizontalAlignment="Right" Height="612" Margin="0,10,10,0" VerticalAlignment="Top" Width="567" Stretch="Fill"/>
+    </Grid>
+</Window>

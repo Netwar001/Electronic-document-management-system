@@ -1,0 +1,31 @@
+﻿<Window x:Class="Electronic_document_management_system.ChangeUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Electronic_document_management_system"
+        mc:Ignorable="d"
+        Title="Изменение учетной записи" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="Изменение учетных записей" HorizontalAlignment="Left" Margin="185,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <DataGrid x:Name="MainDataGrid" HorizontalAlignment="Left" Height="359" Margin="10,50,0,0" VerticalAlignment="Top" Width="573" IsReadOnly="True" >
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick"/>
+                </Style>
+            </DataGrid.ItemContainerStyle>
+        </DataGrid>
+        <StackPanel x:Name="DataPanel" HorizontalAlignment="Left" Height="284" Margin="588,50,0,0" VerticalAlignment="Top" Width="194">
+            <Label Content="ФИО"/>
+            <TextBox x:Name="NameTextBox" Height="23" TextWrapping="Wrap" />
+            <Label Content="Должность"/>
+            <ComboBox x:Name="PositionComboBox" VerticalAlignment="Stretch"/>
+            <Label Content="Подразделение"/>
+            <ComboBox x:Name="SubdivisionComboBox" VerticalAlignment="Stretch"/>
+            <Label Content="e-mail"/>
+            <TextBox x:Name="EmailTextBox" Height="23" TextWrapping="Wrap" />
+        </StackPanel>
+        <Button x:Name="SaveBtn" Content="Сохранить" HorizontalAlignment="Left" Margin="680,377,0,0" VerticalAlignment="Top" Click="SaveBtn_Click" />
+
+    </Grid>
+</Window>

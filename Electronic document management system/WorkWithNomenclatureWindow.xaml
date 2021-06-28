@@ -1,0 +1,24 @@
+﻿<Window x:Class="Electronic_document_management_system.WorkWithNomenclatureWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Electronic_document_management_system"
+        mc:Ignorable="d"
+        Title="Номенклатура дел" Height="536.667" Width="1048.889" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ComboBox x:Name="NameOfSubdivisionComboBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="190" SelectionChanged="NameOfSubdivisionComboBox_SelectionChanged" materialDesign:HintAssist.Hint="Выбор подразделения"/>
+        <Button x:Name="VariantBtn" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Click="VariantBtn_Click"/>
+        <DataGrid x:Name="MainDataGrid" HorizontalAlignment="Left" Height="419" Margin="10,77,0,0" VerticalAlignment="Top" Width="783" AutoGeneratingColumn="MainDataGrid_AutoGeneratingColumn" IsReadOnly="True" SelectionChanged="MainDataGrid_SelectionChanged">
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick"/>
+                </Style>
+            </DataGrid.ItemContainerStyle>
+        </DataGrid>
+        <ScrollViewer Margin="798,77,10,10" >
+            <StackPanel x:Name="DataPanel" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="5,5,5,5"/>
+        </ScrollViewer>
+    </Grid>
+</Window>
